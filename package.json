@@ -1,0 +1,17 @@
+{
+  "name": "aula07",
+  "version": "1.0.0",
+  "description": "Projeto para resolução da atividade de Back-end com o Felipe DEV",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Senai",
+    "nodeJS",
+    "Javascript",
+    "Back-end"
+  ],
+  "author": "Luiz DEV",
+  "license": "MIT"
+}
