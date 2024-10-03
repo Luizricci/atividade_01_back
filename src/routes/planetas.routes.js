@@ -37,55 +37,57 @@ const { id } = req.params;
 
   //console.log(id);
 
-const guloseima = planetas.find((doce) => doce.id === Number(id));
-console.log(guloseima);
+const planeta = planetas.find((planet) => planet.id === Number(id));
+console.log(planeta);
 
-if (!guloseima) {
-    return res.status(404).send({ message: "guloseima não encontrada!!!!!!!" });
+if (!planeta) {
+    return res.status(404).send({ message: "planeta não encontrado!!!!!!!" });
 }
 
-return res.status(200).send(guloseima);
+return res.status(200).send(planeta);
 });
 
-//rota para editar uma guloseima
+//rota para editar um planeta
 planetasRoutes.put("/:id", (req, res) => {
 const { id } = req.params;
 
-const guloseima = planetas.find((doce) => doce.id === Number(id));
-console.log(guloseima);
+const planeta = planetas.find((planet) => planet.id === Number(id));
+console.log(planeta);
 
-if (!guloseima) {
-    return res.status(404).send({ message: "guloseima não encontrada!!!!!!!" });
+if (!planeta) {
+    return res.status(404).send({ message: "planeta não encontrado!!!!!!!" });
 }
 
-const { nome, preco } = req.body;
+const { nome, temperatura, agua, atm } = req.body;
 
-guloseima.nome = nome;
-guloseima.preco = preco;
+planeta.nome = nome;
+planeta.temperatura = temperatura;
+planeta.agua = agua;
+planeta.atm = atm;
 
 return res.status(200).send({
-    message: "Guloseima atualizada !!!!!!",
-    guloseima,
+    message: "planeta atualizado !!!!!!",
+    planeta,
 });
 });
 
-// rota para deletar uma guloseima
+// rota para deletar uma planeta
 planetasRoutes.delete("/:id", (req, res) => {
 const { id } = req.params;
 
 
-const guloseima = planetas.find((doce) => doce.id === Number(id));
-console.log(guloseima);
+const planeta = planetas.find((planet) => planet.id === Number(id));
+console.log(planeta);
 
-if (!guloseima) {
-    return res.status(404).send({ message: "guloseima não encontrada!!!!!!!" });
+if (!planeta) {
+    return res.status(404).send({ message: "planeta não encontrado!!!!!!!" });
 }
 
-planetas = planetas.filter((doce) => doce.id !== Number(id));
+planetas = planetas.filter((planet) => planet.id !== Number(id));
 
 return res.status(200).send({
-    message: "guloseima deletada",
-    guloseima,
+    message: "planeta deletado",
+    planeta,
 })
 });
 
